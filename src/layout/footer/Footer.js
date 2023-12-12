@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import EmblemLogo from "./../../assets/images/slantapp-icon.png"
+// import EmblemLogo from "./../../assets/images/slantapp-icon.png"
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="nk-footer-wrap">
           <div className="nk-footer-copyright">
             {" "}
-            &copy; 2023 UnSurge By <a href="https://slantapp.com"> <img style={{width: 12, height: 'auto'}} alt={''} src={EmblemLogo}/> Slantapp</a>
+            &copy; 2023 Bistro Bliss <a href="#"> <img style={{width: 12, height: 'auto'}} alt={''} src=""/></a>
           </div>
           <div className="nk-footer-links">
             <ul className="nav nav-sm">

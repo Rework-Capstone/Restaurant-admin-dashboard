@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../../images/logo.png";
-import LogoDark from "../../images/logo-dark.png";
-import Head from "../../layout/head/Head";
-import AuthFooter from "./AuthFooter";
+import Logo from "../images/logo.png";
+// import LogoDark from "../../images/logo-dark.png";
+import Head from "../layout/head/Head";
+import AuthFooter from "./auth/AuthFooter";
 import {
   Block,
   BlockContent,
@@ -13,7 +13,7 @@ import {
   Button,
   Icon,
   PreviewCard,
-} from "../../components/Component";
+} from "../components/Component";
 import { Spinner } from "reactstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
@@ -34,8 +34,8 @@ const Register = () => {
       <Block className="nk-block-middle nk-auth-body  wide-xs">
         <div className="brand-logo pb-4 text-center">
           <Link to={`${process.env.PUBLIC_URL}/`} className="logo-link">
-            <img className="logo-light logo-img logo-img-lg" src={Logo} alt="logo" />
-            <img className="logo-dark logo-img logo-img-lg" src={LogoDark} alt="logo-dark" />
+            {/* <img className="logo-light logo-img logo-img-lg" src={Logo} alt="logo" /> */}
+            <img className="logo-dark logo-img logo-img-sm" src={Logo} alt="logo-dark" />
           </Link>
         </div>
         <PreviewCard className="card-bordered" bodyClass="card-inner-lg">
@@ -43,14 +43,14 @@ const Register = () => {
             <BlockContent>
               <BlockTitle tag="h4">Register</BlockTitle>
               <BlockDes>
-                <p>Create New Dashlite Account</p>
+                <p>Create New Admin Account</p>
               </BlockDes>
             </BlockContent>
           </BlockHead>
           <form className="is-alter" onSubmit={handleSubmit(handleFormSubmit)}>
             <div className="form-group">
               <label className="form-label" htmlFor="name">
-                Name
+                Fullname
               </label>
               <div className="form-control-wrap">
                 <input
@@ -65,7 +65,7 @@ const Register = () => {
             <div className="form-group">
               <div className="form-label-group">
                 <label className="form-label" htmlFor="default-01">
-                  Email or Username
+                  Email
                 </label>
               </div>
               <div className="form-control-wrap">
@@ -75,8 +75,50 @@ const Register = () => {
                   id="default-01"
                   {...register('email', { required: true })}
                   className="form-control-lg form-control"
-                  placeholder="Enter your email address or username" />
+                  placeholder="Enter your email address" />
                 {errors.email && <p className="invalid">This field is required</p>}
+              </div>
+            </div>
+            <div className="form-group">
+              <div className="form-label-group">
+                <label className="form-label" htmlFor="default-01">
+                  Phone Number
+                </label>
+              </div>
+              <div className="form-control-wrap">
+                <input
+                  type="text"
+                  bssize="lg"
+                  id="default-01"
+                  {...register('phone', { required: true })}
+                  className="form-control-lg form-control"
+                  placeholder="Enter your phone number" />
+                {errors.phone && <p className="invalid">This field is required</p>}
+              </div>
+            </div>
+            <div className="form-group">
+              <div className="form-label-group">
+                <label className="form-label" htmlFor="default-01">
+                  Role
+                </label>
+              </div>
+              <div className="form-control-wrap">
+                <select name="" id="default-01" bssize="lg" 
+                {...register('phone', { required: true })}
+                className="form-control-lg form-control">
+                  <option value="Admin">Admin</option>
+                  <option value="Staff">Staff</option>
+                  <option value="Member">Member</option>
+                </select>
+                {errors.phone && <p className="invalid">This field is required</p>}
+                {/* <input
+                  type="text"
+                  bssize="lg"
+                  id="default-01"
+                  {...register('phone', { required: true })}
+                  className="form-control-lg form-control"
+                  placeholder="Enter your phone number" />
+                {errors.phone && <p className="invalid">This field is required</p>} */}
               </div>
             </div>
             <div className="form-group">

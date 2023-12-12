@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Logo from "../../images/logo.png";
+// import Logo from "../../images/logo.png";
 import LogoDark from "../../images/logo-dark.png";
 import Head from "../../layout/head/Head";
 import AuthFooter from "./AuthFooter";
@@ -51,8 +52,8 @@ const Login = () => {
       <Block className="nk-block-middle nk-auth-body  wide-xs">
         <div className="brand-logo pb-4 text-center">
           <Link to={process.env.PUBLIC_URL + "/"} className="logo-link">
-            <img className="logo-light logo-img logo-img-lg" src={Logo} alt="logo" />
-            <img className="logo-dark logo-img logo-img-lg" src={LogoDark} alt="logo-dark" />
+            {/* <img className="logo-light logo-img logo-img-lg" src={Logo} alt="logo" /> */}
+            <img className="logo-dark logo-img logo-img-sm" src={Logo} alt="logo-dark" />
           </Link>
         </div>
 
@@ -61,7 +62,7 @@ const Login = () => {
             <BlockContent>
               <BlockTitle tag="h4">Sign-In</BlockTitle>
               <BlockDes>
-                <p>Access Dashlite using your email and passcode.</p>
+                <p>Access Rework Restaurant Dashboard using your email and passcode.</p>
               </BlockDes>
             </BlockContent>
           </BlockHead>
@@ -76,7 +77,7 @@ const Login = () => {
             <div className="form-group">
               <div className="form-label-group">
                 <label className="form-label" htmlFor="default-01">
-                  Email or Username
+                  Email
                 </label>
               </div>
               <div className="form-control-wrap">
@@ -84,8 +85,8 @@ const Login = () => {
                   type="text"
                   id="default-01"
                   {...register('name', { required: "This field is required" })}
-                  defaultValue="info@softnio.com"
-                  placeholder="Enter your email address or username"
+                  // defaultValue="info@softnio.com"
+                  placeholder="Enter your email address"
                   className="form-control-lg form-control" />
                 {errors.name && <span className="invalid">{errors.name.message}</span>}
               </div>
@@ -116,7 +117,7 @@ const Login = () => {
                   type={passState ? "text" : "password"}
                   id="password"
                   {...register('passcode', { required: "This field is required" })}
-                  defaultValue="123456"
+                  // defaultValue="123456"
                   placeholder="Enter your passcode"
                   className={`form-control-lg form-control ${passState ? "is-hidden" : "is-shown"}`} />
                 {errors.passcode && <span className="invalid">{errors.passcode.message}</span>}

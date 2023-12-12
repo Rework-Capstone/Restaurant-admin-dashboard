@@ -137,7 +137,7 @@ import Error504Modern from "../pages/error/504-modern";
 import Error504Classic from "../pages/error/504-classic";
 
 import Login from "../pages/auth/Login";
-import Register from "../pages/auth/Register";
+import Register from "../pages/Register";
 import ForgotPassword from "../pages/auth/ForgotPassword";
 import Success from "../pages/auth/Success";
 
@@ -148,8 +148,8 @@ import LayoutApp from "../layout/Index-app";
 import CreateKitchenStaff from "../pages/panel/subscription/CreateKitchenStaff";
 import CreateUsers from "../pages/panel/subscription/CreateUsers";
 import Categories from "../pages/panel/subscription/Categories";
+import TableOrder from "../pages/panel/subscription/TableOrder";
 import BreakfastMenu from "../pages/panel/subscription/BreakfastMenu";
-import AdminRegister from "../pages/Admin-register/AdminRegister";
 
 const Pages = () => {
   const location = useLocation();
@@ -161,10 +161,10 @@ const Pages = () => {
 
   return (
     <Routes>
+      <Route index element={<Register />}></Route>
       <Route path={`${process.env.PUBLIC_URL}`} element={<LayoutSubscription />}>
-        <Route index element={<SubsDashboard />}></Route>
         <Route path="subscription">
-          <Route path="" element={<SubsDashboard />}></Route>
+          <Route path="index" element={<SubsDashboard />}></Route>
           <Route path="food-orders" element={<FoodOrders />}></Route>
           <Route path="subscription-details/:subscriptionId" element={<SubsSubscriptionDetails />}></Route>
           <Route path="tickets" element={<SubsTickets />}></Route>
@@ -179,6 +179,7 @@ const Pages = () => {
           </Route>
           <Route path="profile-activity" element={<SubsProfileActivity />}></Route>
           <Route path="categories" element={<Categories />}></Route>
+          <Route path="table-order" element={<TableOrder />}></Route>
           <Route path="breakfast-menu" element={<BreakfastMenu />}></Route>
           <Route path="create-staff" element={<CreateKitchenStaff />}></Route>
           <Route path="create-user" element={<CreateUsers />}></Route>
@@ -188,8 +189,14 @@ const Pages = () => {
           <Route path="faqs" element={<SubsFaqs />}></Route>
           <Route path="downloads" element={<SubsDownloads />}></Route>
           <Route path="contact" element={<SubsContact />}></Route>
-          <Route path="admin-register" element={<AdminRegister />}></Route>
         </Route>
+      </Route>
+
+      <Route path={`${process.env.PUBLIC_URL}`} element={<LayoutNoSidebar />}>
+          <Route path="auth-success" element={<Success />}></Route>
+          <Route path="auth-reset" element={<ForgotPassword />}></Route>
+          <Route path="auth-register" element={<Register />}></Route>
+          <Route path="auth-login" element={<Login />}></Route>
       </Route>
 
       {/* <Route path={`${process.env.PUBLIC_URL}/subscription`} element={<LayoutSubscription variant="support" />}>

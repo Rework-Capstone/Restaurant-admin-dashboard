@@ -1,6 +1,6 @@
 {
-  "name": "Pindroo Admin Dashboard",
-  "homepage": "https://react.dashlite.net/admin/",
+  "name": "Bistro-Bliss Admin Dashboard",
+  "Register": "https://react.dashlite.net/admin",
   "version": "1.7.0",
   "private": true,
   "dependencies": {

@@ -34,6 +34,9 @@ const FoodOrders = () => {
                         <li className="order-md-last">
                             <Link to={`${process.env.PUBLIC_URL}/subscription/categories`} className="btn btn-white btn-dim btn-outline-primary"><span>View Categories</span></Link>
                         </li>
+                        <li>
+                            <Link to={`${process.env.PUBLIC_URL}/subscription/table-order`} className="btn btn-white btn-dim btn-outline-primary"><span>View Tables</span></Link>
+                        </li>
                     </ul>
                 </BlockHeadContent>
             </BlockBetween>
@@ -55,7 +58,7 @@ const FoodOrders = () => {
                                 <div className="sp-plan-opt">
                                     <div className="custom-control custom-switch">
                                         <input type="checkbox" className="custom-control-input" id={`plan-id-${item.id}`} defaultChecked={item.autorenew} disabled={item.status === 'Expired'}/>
-                                        <label className="custom-control-label text-soft" htmlFor={`plan-id-${item.id}`}>CANCEL</label>
+                                        <label className="custom-control-label text-soft" htmlFor={`plan-id-${item.id}`}>COMPLETED</label>
                                     </div>
                                 </div>
                             </Col>
